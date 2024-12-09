@@ -15,7 +15,7 @@ const SingleBlog: React.FC = () => {
         <div className="lg:col-span-2 space-y-8">
           {/* Featured Image */}
           <img
-            src="https://via.placeholder.com/800x400"
+            src="b1.png"
             alt="Featured"
             className="w-full rounded-lg"
           />
@@ -34,12 +34,12 @@ const SingleBlog: React.FC = () => {
           {/* Two Images */}
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://via.placeholder.com/400x200"
+              src="ss6.png"
               alt="Blog Image 1"
               className="w-full rounded-lg"
             />
             <img
-              src="https://via.placeholder.com/400x200"
+              src="ss5.png"
               alt="Blog Image 2"
               className="w-full rounded-lg"
             />
@@ -56,7 +56,7 @@ const SingleBlog: React.FC = () => {
             {Array.from({ length: 4 }).map((_, index) => (
               <div key={index} className="text-center">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="ss4.png"
                   alt={`Product ${index + 1}`}
                   className="w-full rounded-lg"
                 />
