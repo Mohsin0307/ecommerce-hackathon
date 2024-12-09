@@ -1,4 +1,4 @@
-'react';
+import React from 'react';
 import {
     Table,
     TableBody,
@@ -7,7 +7,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 import {
     Card,
@@ -15,27 +15,23 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
-    
+    Select,
+    SelectContent,
+    SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
-import { Select, SelectContent, SelectItem } from '@radix-ui/react-select'
-
+} from "@radix-ui/react-select";
 
 const ShoppingCart = () => {
     return (
-
-        <><Select>
-            <SelectContent>
-                <SelectItem value="value">Label</SelectItem>
-            </SelectContent>
-        </Select><div className="flex flex-col md:flex-row gap-8 px-4 md:px-8 py-8">
+        <>
+            <div className="flex flex-col md:flex-row gap-8 px-4 md:px-8 py-8">
                 {/* Left Section: Product Details */}
                 <div className="flex-1">
                     <h2 className="text-2xl font-semibold mb-4">Shopping Cart</h2>
@@ -103,7 +99,7 @@ const ShoppingCart = () => {
                                     <TableCell>
                                         <Input type="number" min="1" defaultValue="1" className="w-16" />
                                     </TableCell>
-                                    <TableCell>${product.price.toFixed(2)}</TableCell>
+                                    <TableCell>${(product.price * 1).toFixed(2)}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
@@ -143,10 +139,15 @@ const ShoppingCart = () => {
                             <div className="space-y-4">
                                 <div>
                                     <Label htmlFor="country">Country</Label>
-                                    <Select value="country" defaultValue="">
-                                        <SelectItem value="bangladesh">Bangladesh</SelectItem>
-                                        <SelectItem value="usa">USA</SelectItem>
-                                        <SelectItem value="uk">UK</SelectItem>
+                                    <Select defaultValue="">
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Select a country" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="bangladesh">Bangladesh</SelectItem>
+                                            <SelectItem value="usa">USA</SelectItem>
+                                            <SelectItem value="uk">UK</SelectItem>
+                                        </SelectContent>
                                     </Select>
                                 </div>
                                 <div>
@@ -162,8 +163,9 @@ const ShoppingCart = () => {
                         </CardContent>
                     </Card>
                 </div>
-            </div></>
+            </div>
+        </>
     );
-  };
-  
-  export default ShoppingCart;
+};
+
+export default ShoppingCart;
