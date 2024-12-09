@@ -2,7 +2,7 @@ import React from 'react';
 
 const UniqueFeatures: React.FC = () => {
   return (
-    <section className="bg-purple-50 py-12 px-6 text-center">
+    <section className="bg-[#F1F0FF] py-12 px-6 text-center">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <img src="/17.png" alt="Italian Sofa" className="w-full md:w-1/2 rounded-md shadow-md" />

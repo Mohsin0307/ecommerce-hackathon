@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 py-10">
+    <footer className="bg-[#eeeffb] py-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Newsletter Signup */}
         <div>
@@ -39,11 +39,12 @@ const Footer: React.FC = () => {
           <h3 className="text-lg font-bold mb-4">Customer Care</h3>
           <ul className="space-y-2 text-gray-600">
             <Link href="/myaccount">My Account</Link>
-            <li>Discount</li>
-            <li>Returns</li>
+            <li><Link href="/aboutus">About Us</Link></li>
             <li><Link href="/mycart">Add to Cart</Link></li>
-            
-            <li>Order Tracking</li>
+            <li><Link href="/odr">Order Tracking</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
+
+
           </ul>
         </div>
 
@@ -55,8 +56,8 @@ const Footer: React.FC = () => {
               <br />
             <li><Link href="/shopbar">Browse the Shop</Link></li>
             <li><Link href="/shop-list">Category</Link></li>
-            <li>Pre-Built Pages</li>
-            <li>WooCommerce Pages</li>
+            <li><Link href="/singleblog">SingleBlog</Link></li>
+            <li><Link href="/404page">WooCommerce Pages</Link></li>
           </ul>
         </div>
       </div>
