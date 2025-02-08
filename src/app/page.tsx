@@ -10,11 +10,12 @@ import PromotionalBanner from '@/components/PromotionalBanner';
 import Lblog from '@/components/Lblog';
 import TopCat from '@/components/Topcat';
 import Newsletter from '@/components/NewsLetter';
+import { CartProvider } from './context/CartContext';
+
 
 const Home: React.FC = () => {
   return (
-    <div>
-     
+    <div>      
       <HeroSection />
       <FeaturedProducts />
       <LatestProducts />

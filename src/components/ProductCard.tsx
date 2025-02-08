@@ -1,4 +1,4 @@
-// components/ProductCard.tsx
+import React from 'react';
 import Image from 'next/image';
 
 interface ProductCardProps {
@@ -9,10 +9,18 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ title, price, image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
-      <Image src={image} alt={title} width={200} height={200} className="rounded" />
-      <h3 className="text-lg font-bold mt-4 text-center">{title}</h3>
-      <p className="text-gray-600 text-center">{price}</p>
+    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow">
+      <div className="relative w-full h-48 mb-4">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover rounded-md"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+        />
+      </div>
+      <h3 className="text-lg font-medium text-gray-900 mb-2">{title}</h3>
+      <span className="text-xl font-bold text-gray-900">{price}</span>
     </div>
   );
 };

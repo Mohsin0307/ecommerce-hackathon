@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"; 
 import { Inter } from "next/font/google";
 import "./globals.css";
 import TopHeader from "@/components/TopHeader";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { relative } from "path";
 import LogosSection from "@/components/LogosSection";
+import { CartProvider } from "@/app/context/CartContext"; // Import CartProvider
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative">
-        <TopHeader />
-        <Header />
-      {children}
-      <LogosSection />
-      <Footer />
+        <CartProvider> {/* Wrap everything inside CartProvider */}
+          <TopHeader />
+          <Header />
+          {children}
+          <LogosSection />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

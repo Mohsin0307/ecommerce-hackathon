@@ -1,6 +1,8 @@
 'use client';
 
 import { Mail, Phone, Globe, User, Heart, ShoppingCart } from 'lucide-react';
+import CartIcon from './CartIcon';
+import { CartProvider } from '@/app/context/CartContext';
 
 export default function TopHeader() {
   return (
@@ -11,7 +13,7 @@ export default function TopHeader() {
         <div className="flex items-center space-x-1">
           <Mail size={16} />
           <a href="mailto:mhhasanul@gmail.com" className="hover:underline">
-            mhhasanul@gmail.com
+            mirzamohsin773@gmail.com
           </a>
         </div>
 
@@ -19,7 +21,7 @@ export default function TopHeader() {
         <div className="flex items-center space-x-1">
           <Phone size={16} />
           <a href="tel:+1234567890" className="hover:underline">
-            (12345)67890
+            (+92)307-3482322
           </a>
         </div>
       </div>
@@ -55,7 +57,9 @@ export default function TopHeader() {
 
         {/* Cart */}
         <div className="flex items-center space-x-1">
-          <ShoppingCart size={16} />
+          <CartProvider>
+          <CartIcon />
+          </CartProvider>
           <a href="/cart" className="hover:underline">
             Cart
           </a>
